@@ -53,8 +53,10 @@ class FuncionarioController extends Db
         $base = "   SELECT 
                         f.id,
                         f.nome AS nome,
+                        DATE_FORMAT(f.data_nascimento, '%d/%m/%Y') AS data_nasc,
                         YEAR(FROM_DAYS(TO_DAYS(NOW())-TO_DAYS(f.data_nascimento))) AS idade,
                         f.funcao AS funcao,
+                        d.id AS id_dep,
                         d.descricao AS departamento
 
                     FROM 
