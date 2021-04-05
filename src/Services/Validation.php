@@ -39,7 +39,7 @@ class Validation
         $last_day = '';
         list($day, $month, $year) = explode("/", $txt);
 
-        if($month >= 1 && $month <= 12 && $year > 0){
+        if($month >= 1 && $month <= 12 && $year > 0 && $year < date('Y') && $year > '1910'){
             if(in_array($month, $months_31)){
                 $last_day = 31;
             } else if($month == 2){
